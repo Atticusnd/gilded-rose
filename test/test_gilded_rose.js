@@ -37,4 +37,17 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).to.equal(80);
   });
+
+  it("should return if 'Backstage passes' increases in quality the older it gets", function() {
+    const BackstageUp = new Shop([ new Item("Backstage passes", 12, 4) ]);
+    const BackstageLessThan10 = new Shop([ new Item("Backstage passes", 8, 4) ]);
+    const BackstageLessThan5 = new Shop([ new Item("Backstage passes", 4, 4) ]);
+    let itemsUp = BackstageUp.updateQuality();
+    let itemsLessThan10 = BackstageLessThan10.updateQuality();
+    let itemsLessThan5 = BackstageLessThan5.updateQuality();
+    expect(itemsUp[0].quality).to.equal(5);
+    expect(itemsLessThan10[0].quality).to.equal(6);
+    expect(itemsLessThan5[0].quality).to.equal(7);
+  });
+
 });
