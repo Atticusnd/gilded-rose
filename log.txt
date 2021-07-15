@@ -1,0 +1,23 @@
+commit d3eaca02c7e3716069e59a51f5557a680d3cf241
+Author: atticusfj <fija90@gmail.com>
+Date:   Thu Jul 15 04:04:10 2021 -0500
+
+    Conjured function and test
+
+commit ceb377010fd32573595ecc3c70b8a6018e89789b
+Author: atticusfj <fija90@gmail.com>
+Date:   Thu Jul 15 02:52:59 2021 -0500
+
+    Backstage passes test and fixed label on ifs
+
+commit d574810942854063e19448f2f64a445f1252789d
+Author: atticusfj <fija90@gmail.com>
+Date:   Thu Jul 15 02:12:45 2021 -0500
+
+    Sulfuras fixed, refactor code related with Sulfuras and added tests and notes from general process
+
+commit a7d7e96ea89f45d8d6d79811029e15f51850a868
+Author: Adan Figueroa <adan.figueroa@encora.com>
+Date:   Thu Jul 15 00:11:00 2021 -0500
+
+    This is the beginning
