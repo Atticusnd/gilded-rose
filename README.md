@@ -11,6 +11,12 @@
 - Code is also available on [Github](https://github.com/Atticusnd/gilded-rose/tree/main)
 - You can find Git history on log.txt 
 
+### To Do:
+- Create functions to describe the behavior by item type
+- Remove all unnecessary ifs, maybe using high order functions(ish) :p 
+- Update code using some ES features and good practices
+- Creating better uses cases on unit testing section and finishing all the cases
+
 
 ### Initial thoughts 
 - After test for the first time I found that the test defined doesn't make sense but I think it's just an example and the code will not work because the if definitions are wrong
