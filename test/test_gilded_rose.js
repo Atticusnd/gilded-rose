@@ -3,10 +3,10 @@ var {Shop, Item} = require('../src/gilded_rose.js');
 describe("Gilded Rose", function() {
 
   it("should return name, sellIn and quality from a simple product", function() {
-    const gildedRose = new Shop([ new Item("foo", 0, 0) ]);
+    const gildedRose = new Shop([ new Item("foo", 1, 1) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].name).to.equal("foo");
-    expect(items[0].sellIn).to.equal(-1);
+    expect(items[0].sellIn).to.equal(0);
     expect(items[0].quality).to.equal(0);
   });
 
@@ -48,6 +48,15 @@ describe("Gilded Rose", function() {
     expect(itemsUp[0].quality).to.equal(5);
     expect(itemsLessThan10[0].quality).to.equal(6);
     expect(itemsLessThan5[0].quality).to.equal(7);
+  });
+
+  it("should return if 'Conjured' degrade in Quality twice", function() {
+    const gildedRose = new Shop([ new Item("Conjured", 12, 4) ]);
+    const items = gildedRose.updateQuality();
+    const gtrThanZero = new Shop([ new Item("Conjured", 12, 1) ]);
+    const itemsZero = gtrThanZero.updateQuality();
+    expect(items[0].quality).to.equal(2);
+    expect(itemsZero[0].quality).to.equal(0);
   });
 
 });

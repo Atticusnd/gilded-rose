@@ -6,6 +6,13 @@ class Item {
   }
 }
 
+function updateConjuredItems(item) {
+    //Decrease quality while being greater than 0
+    item.quality -2 >= 0 ? item.quality -= 2 : item.quality = 0;  
+    item.sellIn -= 1;
+    return item;
+  }
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -14,11 +21,13 @@ class Shop {
 
   updateQuality() {
     const itemsValues = {
-      Sulfuras: { name: 'Sulfuras', sellIn: 0, quality: 80 } 
+      Sulfuras: { name: 'Sulfuras', sellIn: 0, quality: 80 },
     }
 
     for (var i = 0; i < this.items.length; i++) {
-      if(itemsValues[this.items[i].name]){
+      if(this.items[i].name === 'Conjured'){
+        this.items[i] = updateConjuredItems(this.items[i]);
+      }else if(itemsValues[this.items[i].name]){
         this.items[i] = itemsValues[this.items[i].name];
       }else{
         if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes') {
